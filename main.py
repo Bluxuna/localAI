@@ -1,8 +1,11 @@
-from chooseAI.linux_system_information import LinuxSystemInformation
+import platform
+import os
+from typing import Optional
+from chooseAI.recommendation_engine import ModelRecommendationEngine
+from chooseAI.parse_ollama import fetch_models, get_all_models
 from chooseAI.systemInfo import SystemInformation
+from chooseAI.chooseAI import  ChooseAI
 
-linux_info = LinuxSystemInformation()
-cpu_info = linux_info.get_cpu()
-print(f"CPU: {cpu_info.name} - {cpu_info.logical_cores} cores")
-if cpu_info.error:
-    print(f"Error: {cpu_info.error}")
+if __name__ == "__main__":
+    choose_ai = ChooseAI()
+    choose_ai.run()
